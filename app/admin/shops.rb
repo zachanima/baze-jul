@@ -1,4 +1,8 @@
 ActiveAdmin.register Shop do
+  scope :all, default: true
+
+  filter :name
+
   index do
     column :name
     column :username_text
