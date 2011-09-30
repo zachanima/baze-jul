@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  brand: MyString
+  text: MyText
+  shop_id: 1
+
+two:
+  title: MyString
+  brand: MyString
+  text: MyText
+  shop_id: 1

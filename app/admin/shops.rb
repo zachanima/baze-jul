@@ -12,9 +12,6 @@ ActiveAdmin.register Shop do
     column :password_text
     column :opens_on
     column :closes_on
-    column :customers do |shop|
-      shop.customers.count.to_s
-    end
     default_actions
   end
 
