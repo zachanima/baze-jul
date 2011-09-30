@@ -1,7 +1,10 @@
 ActiveAdmin.register Shop do
+  menu priority: 1
+
   scope :all, default: true
 
   filter :name
+  filter :text
 
   index do
     column :name
