@@ -3,11 +3,11 @@ ActiveAdmin.register Shop do
 
   scope :all, default: true
 
-  filter :name
+  filter :title
   filter :text
 
   index do
-    column :name
+    column :title
     column :username_text
     column :password_text
     column :opens_on
@@ -17,7 +17,7 @@ ActiveAdmin.register Shop do
 
   form do |f|
     f.inputs 'Basic' do
-      f.input :name
+      f.input :title
       f.input :slug, label: 'Link'
       f.input :text
     end
