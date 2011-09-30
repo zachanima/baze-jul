@@ -79,6 +79,7 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   # config.allow_comments_in = [:admin]
+  config.allow_comments_in = nil
 
 
   # == Controller Filters
