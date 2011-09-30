@@ -9,11 +9,10 @@ ActiveAdmin.register Task do
   filter :text
 
   index do
-    column :title
     column 'Status' do |task|
       status_tag task.status
     end
-    column :created_at
+    column :title
     column :updated_at
     default_actions
   end
