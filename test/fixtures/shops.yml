@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  slug: MyString
+  username_text: MyString
+  password_text: MyString
+  text: MyText
+  opens_on: 2011-09-30
+  closes_on: 2011-09-30
+  locale: MyString
+
+two:
+  name: MyString
+  slug: MyString
+  username_text: MyString
+  password_text: MyString
+  text: MyText
+  opens_on: 2011-09-30
+  closes_on: 2011-09-30
+  locale: MyString
