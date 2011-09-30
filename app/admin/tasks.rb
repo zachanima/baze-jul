@@ -1,4 +1,6 @@
 ActiveAdmin.register Task do
+  menu parent: 'Administration'
+
   scope :all, default: true
   scope :pending
   scope :complete

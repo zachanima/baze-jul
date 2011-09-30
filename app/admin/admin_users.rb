@@ -1,4 +1,6 @@
 ActiveAdmin.register AdminUser do
+  menu parent: 'Administration'
+
   filter :email
 
   index do
