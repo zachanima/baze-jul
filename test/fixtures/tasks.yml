@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  text: MyString
+  admin_user_id: 1
+  is_done: false
+
+two:
+  title: MyString
+  text: MyString
+  admin_user_id: 1
+  is_done: false
