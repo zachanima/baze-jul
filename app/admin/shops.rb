@@ -16,7 +16,7 @@ ActiveAdmin.register Shop do
   end
 
   form do |f|
-    f.inputs 'Basic' do
+    f.inputs do
       f.input :title
       f.input :slug, label: 'Link'
       f.input :text

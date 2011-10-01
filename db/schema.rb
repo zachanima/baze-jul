@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111001124152) do
+ActiveRecord::Schema.define(:version => 20111001125403) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20111001124152) do
   create_table "option_arrays", :force => true do |t|
     t.string   "title"
     t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "options", :force => true do |t|
+    t.string   "text"
+    t.integer  "option_array_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
