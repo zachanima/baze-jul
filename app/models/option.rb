@@ -5,7 +5,5 @@ class Option < ActiveRecord::Base
 
   validates :text, :option_array, presence: true
 
-  def to_label
-    text
-  end
+  alias :to_label :text
 end
