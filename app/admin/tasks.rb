@@ -9,7 +9,7 @@ ActiveAdmin.register Task do
   filter :text
 
   index do
-    column 'Status' do |task|
+    column 'State', sortable: :is_complete do |task|
       status_tag task.status
     end
     column :title
