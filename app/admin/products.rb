@@ -26,6 +26,11 @@ ActiveAdmin.register Product do
       f.input :text
       f.input :option_arrays, as: :check_boxes
     end
+    f.object.option_arrays.each do |option_array|
+      f.inputs option_array.text do
+        f.input :options, as: :check_boxes, collection: option_array.options
+      end
+    end
     f.buttons
   end
 end

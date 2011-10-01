@@ -1,4 +1,4 @@
-ActiveAdmin.register OptionArray, as: 'Variant' do
+ActiveAdmin.register OptionArray do
   menu priority: 4
 
   scope :all, default: true
