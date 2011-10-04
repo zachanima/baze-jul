@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111001172111) do
+ActiveRecord::Schema.define(:version => 20111004215356) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20111001172111) do
     t.datetime "updated_at"
   end
 
+  add_index "customers", ["shop_id"], :name => "index_customers_on_shop_id"
+
   create_table "option_arrays", :force => true do |t|
     t.string   "title"
     t.string   "text"
@@ -68,6 +70,8 @@ ActiveRecord::Schema.define(:version => 20111001172111) do
     t.datetime "updated_at"
   end
 
+  add_index "options", ["option_array_id"], :name => "index_options_on_option_array_id"
+
   create_table "products", :force => true do |t|
     t.string   "title"
     t.string   "brand"
@@ -76,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20111001172111) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "products", ["shop_id"], :name => "index_products_on_shop_id"
 
   create_table "shops", :force => true do |t|
     t.string   "title"
@@ -105,11 +111,17 @@ ActiveRecord::Schema.define(:version => 20111001172111) do
     t.datetime "updated_at"
   end
 
+  add_index "variants", ["option_array_id"], :name => "index_variants_on_option_array_id"
+  add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
+
   create_table "variations", :force => true do |t|
     t.integer  "option_id"
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "variations", ["option_id"], :name => "index_variations_on_option_id"
+  add_index "variations", ["product_id"], :name => "index_variations_on_product_id"
 
 end
