@@ -30,7 +30,7 @@ ActiveAdmin.register Shop do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :slug, label: 'Link'
+      f.input :link
       f.input :text
     end
     f.inputs 'Advanced' do

@@ -3,5 +3,5 @@ class Shop < ActiveRecord::Base
   has_many :products, dependent: :destroy
 
   validates :title, presence: true
-  validates :slug, presence: true, uniqueness: true
+  validates :link, presence: true, uniqueness: true
 end
