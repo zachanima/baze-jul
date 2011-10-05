@@ -22,7 +22,7 @@ ActiveAdmin.register OptionArray do
     end
     f.inputs 'Options' do
       f.semantic_fields_for :options do |option|
-        option.input :text
+        option.input :text, required: false
       end
     end
     f.buttons
@@ -30,10 +30,12 @@ ActiveAdmin.register OptionArray do
 
   controller do
     def new
-      @option_array = OptionArray.new.options.build.option_array
+      @option_array = OptionArray.new
+      5.times { @option_array.options.build }
     end
     def edit
-      @option_array = OptionArray.find(params[:id]).options.build.option_array
+      @option_array = OptionArray.find(params[:id])
+      5.times { @option_array.options.build }
     end
   end
 end
