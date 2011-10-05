@@ -29,7 +29,7 @@ ActiveAdmin.register Shop do
       f.input :username_text
       f.input :password_text, as: :string
       f.input :open_on
-      f.input :close_on, hint: 'Closed on this day'
+      f.input :close_on, hint: 'Closed at the start of this day'
     end
     f.buttons
   end
