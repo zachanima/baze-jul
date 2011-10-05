@@ -10,19 +10,11 @@ ActiveAdmin.register Shop do
     column :title
     column :username_text
     column :password_text
-    column 'Opens', sortable: :open_on do |shop|
-      if shop.open_on > Date.today
-        'In ' + distance_of_time_in_words_to_now(shop.open_on)
-      else
-        distance_of_time_in_words_to_now(shop.open_on).capitalize + ' ago'
-      end
+    column 'Open', sortable: :open_on do |shop|
+      distance_of_date_in_words_to_now_as_sentence(shop.open_on)
     end
-    column 'Closes', sortable: :close_on do |shop|
-      if shop.close_on > Date.today
-        'In ' + distance_of_time_in_words_to_now(shop.close_on)
-      else
-        distance_of_time_in_words_to_now(shop.close_on).capitalize + ' ago'
-      end
+    column 'Close', sortable: :close_on do |shop|
+      distance_of_date_in_words_to_now_as_sentence(shop.close_on)
     end
     default_actions
   end
@@ -37,7 +29,7 @@ ActiveAdmin.register Shop do
       f.input :username_text
       f.input :password_text, as: :string
       f.input :open_on
-      f.input :close_on, hint: 'Shop will close the following day'
+      f.input :close_on, hint: 'Closed on this day'
     end
     f.buttons
   end
