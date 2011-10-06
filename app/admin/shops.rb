@@ -7,6 +7,9 @@ ActiveAdmin.register Shop do
   filter :text
 
   index do
+    column :logo, sortable: :logo_file_name do |shop|
+      image_tag shop.logo.url(:thumb) if shop.logo.exists?
+    end
     column :title
     column :username_text
     column :password_text
@@ -28,6 +31,7 @@ ActiveAdmin.register Shop do
     f.inputs 'Advanced' do
       f.input :username_text
       f.input :password_text, as: :string
+      f.input :logo
       f.input :open_on
       f.input :close_on, hint: 'Closed at the start of this day'
     end
