@@ -5,5 +5,7 @@ class Shop < ActiveRecord::Base
   validates :title, presence: true
   validates :link, presence: true, uniqueness: true
 
+  before_validation lambda { link.blank?? self.link = title.parameterize : nil }
+
   has_attached_file :logo, styles: { original: '300x50>', thumb: '90x15>' }
 end

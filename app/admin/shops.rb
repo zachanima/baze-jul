@@ -25,10 +25,10 @@ ActiveAdmin.register Shop do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :link
       f.input :text
     end
     f.inputs 'Advanced' do
+      f.input :link, required: false
       f.input :username_text
       f.input :password_text, as: :string
       f.input :logo
