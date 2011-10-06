@@ -6,4 +6,12 @@ class Product < ActiveRecord::Base
   has_many :options, through: :variations
 
   validates :title, :shop, presence: true
+
+  def copy
+    product = dup
+    product.option_arrays = option_arrays
+    product.options = options
+    product.save
+    product
+  end
 end

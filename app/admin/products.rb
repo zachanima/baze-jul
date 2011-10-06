@@ -15,6 +15,9 @@ ActiveAdmin.register Product do
     column :option_arrays do |product|
       product.option_arrays.collect(&:title) * ', '
     end
+    column do |product|
+      link_to 'Copy', copy_admin_product_path(product)
+    end
     default_actions
   end
 
@@ -32,5 +35,10 @@ ActiveAdmin.register Product do
       end
     end
     f.buttons
+  end
+
+  member_action :copy do
+    redirect_to edit_admin_product_path(Product.find(params[:id]).copy),
+      notice: 'Product was successfully copied.'
   end
 end
