@@ -14,6 +14,7 @@ class Product < ActiveRecord::Base
     product = dup
     product.option_arrays = option_arrays
     product.options = options
+    product.image = image
     product.save
     product
   end
