@@ -15,8 +15,8 @@ ActiveAdmin.register Product do
     column :option_arrays do |product|
       product.option_arrays.collect(&:title) * ', '
     end
-    column :image, sortable: :image_file_name do |product|
-      status_tag 'No image' unless product.image.exists?
+    column 'State' do |product|
+      status_tag 'No image', :error unless product.image.exists?
     end
     column do |product|
       link_to 'Copy', copy_admin_product_path(product)
