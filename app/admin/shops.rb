@@ -13,11 +13,11 @@ ActiveAdmin.register Shop do
     column :title
     column :username_text
     column :password_text
-    column 'Open', sortable: :open_on do |shop|
-      distance_of_date_in_words_to_now_as_sentence(shop.open_on)
+    column 'Opens', sortable: :opens_on do |shop|
+      distance_of_date_in_words_to_now_as_sentence(shop.opens_on)
     end
-    column 'Close', sortable: :close_on do |shop|
-      distance_of_date_in_words_to_now_as_sentence(shop.close_on)
+    column 'Closes', sortable: :closes_on do |shop|
+      distance_of_date_in_words_to_now_as_sentence(shop.closes_on)
     end
     default_actions
   end
@@ -32,8 +32,8 @@ ActiveAdmin.register Shop do
       f.input :username_text
       f.input :password_text, as: :string
       f.input :logo
-      f.input :open_on
-      f.input :close_on, hint: 'Closed at the start of this day'
+      f.input :opens_on
+      f.input :closes_on, hint: 'Closed at the start of this day'
     end
     f.buttons
   end
