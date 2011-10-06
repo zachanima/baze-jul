@@ -14,10 +14,10 @@ ActiveAdmin.register Shop do
     column :username_text
     column :password_text
     column 'Opens', sortable: :opens_on do |shop|
-      distance_of_date_in_words_to_now_as_sentence(shop.opens_on)
+      distance_of_date_as_sentence_to_now(shop.opens_on)
     end
     column 'Closes', sortable: :closes_on do |shop|
-      distance_of_date_in_words_to_now_as_sentence(shop.closes_on)
+      distance_of_date_as_sentence_to_now(shop.closes_on)
     end
     default_actions
   end
