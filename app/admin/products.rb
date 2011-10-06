@@ -9,7 +9,7 @@ ActiveAdmin.register Product do
   filter :text
 
   index do
-    column :shop
+    column :shop, sortable: :shop_id
     column :title
     column :brand
     column :option_arrays do |product|
