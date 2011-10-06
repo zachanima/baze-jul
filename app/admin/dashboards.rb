@@ -9,6 +9,7 @@ ActiveAdmin::Dashboards.build do
         distance_of_time_as_sentence_to_now(task.created_at)
       end
     end
+    strong { link_to 'View Pending Tasks', admin_tasks_path(scope: :pending) }
   end
 
   section 'Recently Completed Tasks' do
@@ -20,6 +21,9 @@ ActiveAdmin::Dashboards.build do
       column 'Completed' do |task|
         distance_of_time_as_sentence_to_now(task.updated_at)
       end
+    end
+    strong do
+      link_to 'View Completed Tasks', admin_tasks_path(scope: :complete)
     end
   end
 end
