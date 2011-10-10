@@ -1,0 +1,89 @@
+@mixin border-radius($radius)
+  border-radius: $radius
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+  -o-border-radius: $radius
+
+@mixin box-shadow($shadow)
+  box-shadow: $shadow
+  -moz-box-shadow: $shadow
+  -webkit-box-shadow: $shadow
+  -o-box-shadow: $shadow
+
+
+
+body
+  color: #333
+  font: 12pt arial, sans-serif
+
+  background-color: #555
+
+  margin: 16px auto
+  width: 748px
+
+h1
+  font-size: 13pt
+  font-weight: normal
+  font-style: oblique
+  text-align: center
+
+a
+  color: #000
+  &:hover
+    color: #666
+
+
+
+#header img
+  background-color: #fff
+  border: 1px solid #999
+
+  margin-left: 16px
+  padding: 8px
+
+
+
+#nav
+  text-align: right
+  margin-top: -8px
+
+  ul
+    list-style: none
+    margin: 0
+    padding-left: 0
+    li
+      font-weight: bold
+      background-color: #fff
+      @include border-radius(8px 8px 0 0)
+      display: inline
+      padding: 8px 16px 9px 16px
+      a
+        color: #fff
+        text-decoration: none
+        background-color: #666
+        display: inline-block
+        margin: 0 -16px
+        padding: 8px 16px
+        &:hover
+          background-color: #999
+
+
+
+#content
+  letter-spacing: 1px
+  line-height: 1.5em
+
+  background-color: #fff
+  +border-radius(16px 0 0 0)
+  +box-shadow(0 0 16px #000)
+
+  min-height: 300px
+  padding: 24px
+
+
+
+#footer
+  +border-radius(0 0 16px 16px)
+  +box-shadow(0 0 16px #000)
+
+  height: 115px
