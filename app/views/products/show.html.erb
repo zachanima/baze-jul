@@ -1,0 +1,5 @@
+<div id="product">
+  <%= link_to image_tag(@product.image.url(:medium)), @product.image.url %>
+  <h1><%= @product.title %></h1>
+  <div><%= @product.text %></div>
+</div>
