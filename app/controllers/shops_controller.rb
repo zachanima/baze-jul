@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
   def show
-    @shop = Shop.find params[:id]
+    @shop = Shop.find_by_link params[:id]
   end
 end

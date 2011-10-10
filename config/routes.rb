@@ -6,4 +6,6 @@ Jul::Application.routes.draw do
   resources :shops, only: [:show] do
     resources :products, only: [:index, :show]
   end
+
+  match '/:id', to: 'shops#show'
 end
