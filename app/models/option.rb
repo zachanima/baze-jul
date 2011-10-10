@@ -3,7 +3,9 @@ class Option < ActiveRecord::Base
   has_many :variations, dependent: :destroy
   has_many :products, through: :variations
 
-  validates :text, :option_array, presence: true
+  # TODO: Avoid saving to database before destroying.
+  after_save lambda { self.destroy if self.text.blank? }
+  validates :option_array, presence: true
 
   def to_label
     text
