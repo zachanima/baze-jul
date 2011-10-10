@@ -15,6 +15,9 @@
   <div id="nav">
     <ul>
       <li><%= link_to_unless_current 'Welcome', @shop %></li>
+      <li>
+        <%= link_to_unless_current 'Presents', shop_products_path(@shop) %>
+      </li>
     </ul>
   </div>
 
