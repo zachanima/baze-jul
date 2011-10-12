@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  def show
-    @shop = Shop.find_by_link params[:id]
-  end
+  before_filter :authenticate_customer!
+
+  # def show
 end
