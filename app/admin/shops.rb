@@ -32,6 +32,7 @@ ActiveAdmin.register Shop do
       f.input :username_text
       f.input :password_text, as: :string
       f.input :logo
+      f.input :locale, as: :select, collection: Shop::LOCALES.invert
       f.input :opens_on
       f.input :closes_on, hint: 'Closed at the start of this day'
     end

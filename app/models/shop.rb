@@ -1,9 +1,12 @@
 class Shop < ActiveRecord::Base
+  LOCALES = { 'da' => 'Danish', 'en' => 'English' }
   has_many :customers, dependent: :destroy
   has_many :products, dependent: :destroy
 
   validates :title, presence: true
   validates :link, presence: true, uniqueness: true
+  validates :locale, presence: true
+  validates_inclusion_of :locale, in: LOCALES.each_key
 
   before_validation lambda { link.blank?? self.link = title.parameterize : nil }
 

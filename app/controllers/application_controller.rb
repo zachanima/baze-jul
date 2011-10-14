@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
       redirect_to customer_shop unless customer_shop == @shop
     end
   end
+
+  def set_locale
+    I18n.locale = @shop.locale || I18n.default_locale
+  end
 end
