@@ -7,7 +7,7 @@ Jul::Application.routes.draw do
   resources :shops, only: [:show] do
     resources :products, only: [:index, :show]
     member do
-      devise_for :customers
+      devise_for :customers, controllers: { sessions: 'customer/sessions' }
     end
   end
 

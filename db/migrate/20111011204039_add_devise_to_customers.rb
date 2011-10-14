@@ -6,7 +6,7 @@ class AddDeviseToCustomers < ActiveRecord::Migration
       t.trackable
       t.string :username
       t.string :plaintext_password
-    
+
       # t.recoverable
       # t.encryptable
       # t.confirmable

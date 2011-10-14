@@ -12,6 +12,7 @@ ActiveAdmin.register Customer do
     column :department
     column :name
     column :username
+    column 'Password', :plaintext_password
     default_actions
   end
 
