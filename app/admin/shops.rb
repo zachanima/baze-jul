@@ -13,6 +13,9 @@ ActiveAdmin.register Shop do
     column :title
     column :username_text
     column :password_text
+    column :locale, sortable: :locale do |shop|
+      Shop::LOCALES[shop.locale]
+    end
     column 'Opens', sortable: :opens_on do |shop|
       distance_of_date_as_sentence_to_now(shop.opens_on)
     end
