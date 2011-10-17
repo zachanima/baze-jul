@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   has_many :option_arrays, through: :variants
   has_many :variations
   has_many :options, through: :variations
+  has_many :orders
 
   validates :title, :shop, presence: true
 

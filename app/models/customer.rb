@@ -3,6 +3,7 @@ class Customer < ActiveRecord::Base
     authentication_keys: [:username, :shop_id]
 
   belongs_to :shop
+  has_many :orders
 
   validates :name, :shop, :username, presence: true
   validates_uniqueness_of :username, scope: :shop_id
