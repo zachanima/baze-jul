@@ -5,3 +5,7 @@ da:
 
   remember_me: "Husk mig"
   sign_in: "Log ind"
+
+  formtastic:
+    actions:
+      create: "Afgiv ordre"

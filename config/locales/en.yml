@@ -5,3 +5,7 @@ en:
 
   remember_me: "Remember me"
   sign_in: "Sign in"
+
+  formtastic:
+    actions:
+      create: "Place order"
