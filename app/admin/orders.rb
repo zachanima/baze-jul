@@ -9,6 +9,9 @@ ActiveAdmin.register Order do
     column :shop
     column :customer
     column :product
+    column :options do |order|
+      order.options.collect(&:text) * ', '
+    end
     default_actions
   end
 end
