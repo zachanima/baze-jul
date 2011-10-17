@@ -10,5 +10,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = @shop.products.find params[:id]
+    @order = @product.orders.build
   end
 end

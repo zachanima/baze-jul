@@ -2,4 +2,22 @@
   <%= link_to image_tag(@product.image.url(:medium)), @product.image.url %>
   <h1><%= @product.title %></h1>
   <div><%= @product.text %></div>
+  <%= semantic_form_for [@shop, @product, @order] do |f| %>
+    <%= f.inputs do %>
+      <% @product.option_arrays.each do |option_array| %>
+        <li>
+          <%= f.label option_array.text, option_array.text %>
+          <select name="order[option_ids][]">
+            <% @product.options.where('option_array_id = ?', option_array.id).each do |option| %>
+              <option value="<%= option.id %>"><%= option.text %></option>
+            <% end %>
+          </select>
+        </li>
+      <% end %>
+    <% end %>
+    <%#TODO: Determine validity of customer, product id in context. %>
+    <%= f.hidden_field :customer_id, value: current_customer.id %>
+    <%= f.hidden_field :product_id, value: @product.id %>
+    <%= f.buttons %>
+  <% end %>
 </div>

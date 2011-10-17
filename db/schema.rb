@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111017035033) do
+ActiveRecord::Schema.define(:version => 20111017045528) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -81,6 +81,11 @@ ActiveRecord::Schema.define(:version => 20111017035033) do
   end
 
   add_index "options", ["option_array_id"], :name => "index_options_on_option_array_id"
+
+  create_table "options_orders", :id => false, :force => true do |t|
+    t.integer "option_id"
+    t.integer "order_id"
+  end
 
   create_table "orders", :force => true do |t|
     t.integer  "customer_id"
