@@ -159,6 +159,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.1.0)
+  fastercsv
   jquery-rails
   mysql2
   paperclip
