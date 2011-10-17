@@ -21,6 +21,7 @@ end
 gem 'jquery-rails'
 gem 'therubyracer'
 gem 'paperclip'
+gem 'fastercsv'
 
 # Use unicorn as the web server
 # gem 'unicorn'

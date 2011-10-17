@@ -1,3 +1,5 @@
+require 'csv'
+
 ActiveAdmin.register Customer do
   menu priority: 2
 
