@@ -9,3 +9,6 @@
   You will still be able to log in and view your final choice of present after
   the shop has closed.
 </p>
+<% if current_customer.orders.count > 0 %>
+  <span class="choice">For your information, you have previously chosen <%= current_customer.orders.last.product.title %>.</span>
+<% end %>

@@ -6,3 +6,6 @@
   Du vil stadig have mulighed for at logge ind og se dit endelige gavevalg,
   efter shoppen er lukket.
 </p>
+<% if current_customer.orders.count > 0 %>
+  <span class="choice">Til din orientering har du tidligere valgt <%= current_customer.orders.last.product.title %>.</span>
+<% end %>
