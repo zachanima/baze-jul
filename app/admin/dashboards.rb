@@ -11,14 +11,6 @@ ActiveAdmin::Dashboards.build do
     strong { link_to 'View Orders', admin_orders_path }
   end
 
-  section 'Customers in the last 10 minutes', priority: 2 do
-    table_for Customer.where('current_sign_in_at >= ?', Time.now - 600) do
-      column :shop
-      column :name
-    end
-    strong { link_to 'View Customers', admin_customers_path }
-  end
-
   section 'Pending Tasks' do
     table_for Task.pending.limit(10) do
       column 'State' do |task|
