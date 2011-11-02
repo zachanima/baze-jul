@@ -18,6 +18,20 @@ ActiveAdmin.register Customer do
     default_actions
   end
 
+  csv do
+    column :shop do |customer|
+      customer.shop.title
+    end
+    column :name
+    column :department
+    column 'Order' do |customer|
+      order = customer.orders.last
+      if order
+        order.product.title + (order.options.count > 0 ? " (#{order.options.collect(&:text) * ', '})" : '')
+      end
+    end
+  end
+
   form do |f|
     f.inputs do
       f.input :shop
