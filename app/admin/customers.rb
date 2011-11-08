@@ -22,8 +22,9 @@ ActiveAdmin.register Customer do
     column :shop do |customer|
       customer.shop.title
     end
-    column :name
     column :department
+    column :name
+    column :username
     column 'Order' do |customer|
       order = customer.orders.last
       if order
