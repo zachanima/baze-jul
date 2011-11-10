@@ -12,5 +12,9 @@ class Shop < ActiveRecord::Base
 
   has_attached_file :logo, styles: { original: '300x50>', thumb: '90x15>' }
 
+  def open?
+    (self.closes_on >= Date.today and self.opens_on <= Date.today) ? true : false
+  end
+
   # TODO: Define to_param to use link exclusively.
 end

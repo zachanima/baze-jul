@@ -21,5 +21,5 @@
     <%= f.buttons do %>
       <%= f.commit_button %>
     <% end %>
-  <% end %>
+  <% end if @shop.open? %>
 </div>
