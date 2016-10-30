@@ -6,6 +6,10 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new params[:order]
     @order.save
+
+    customer = @order.customer
+    OrderMailer.receipt(@order).deliver unless customer.email.blank?
+
     redirect_to @shop
   end
 end

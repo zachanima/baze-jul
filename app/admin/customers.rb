@@ -15,6 +15,7 @@ ActiveAdmin.register Customer do
     column :name
     column :username
     column 'Password', :plaintext_password
+    column :email
     default_actions
   end
 
@@ -25,6 +26,7 @@ ActiveAdmin.register Customer do
     column :department
     column :name
     column :username
+    column :email
     column 'Order' do |customer|
       order = customer.orders.last
       if order
@@ -40,6 +42,7 @@ ActiveAdmin.register Customer do
       f.input :name
       f.input :username
       f.input :password
+      f.input :email
     end
     f.buttons
   end
