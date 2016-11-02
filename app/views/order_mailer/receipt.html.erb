@@ -12,6 +12,10 @@
     <strong><%= @order.product.title %></strong><!--
     --><% @order.options.each do |option| %><%= ", #{option.option_array.text}: #{option.text}" %>
     <% end %>
+
+    <% unless @customer.department.blank? %>
+    <p>Afhenting af gave sker ved <strong><%= @customer.department %></strong></p>
+    <% end %>
     </p>
   </body>
 </html>
