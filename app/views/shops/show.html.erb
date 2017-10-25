@@ -10,5 +10,5 @@
   the shop has closed.
 </p>
 <% if current_customer.orders.count > 0 %>
-  <span class="choice">For your information, you have previously chosen <strong><%= current_customer.orders.last.product.title %></strong>.</span>
+  <span class="choice">For your information, you have chosen <strong><%= current_customer.orders.last.product.title %></strong>.</span>
 <% end %>
