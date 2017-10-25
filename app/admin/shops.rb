@@ -11,6 +11,15 @@ ActiveAdmin.register Shop do
       image_tag shop.logo.url(:thumb) if shop.logo.exists?
     end
     column :title
+    column 'Group', sortable: :shop_group_id do |shop|
+			if shop.shop_group
+				unless shop.shop_group_text.blank?
+					"#{shop.shop_group_text} in #{shop.shop_group.title}"
+				else
+					shop.shop_group.title
+				end
+			end
+		end
     column :username_text
     column :password_text
     column :locale, sortable: :locale do |shop|
@@ -38,6 +47,8 @@ ActiveAdmin.register Shop do
       f.input :locale, as: :select, collection: Shop::LOCALES.invert
       f.input :opens_on
       f.input :closes_on, hint: 'Closed at the start of this day'
+			f.input :shop_group
+			f.input :shop_group_text, hint: 'Shown under logo on shop group page'
     end
     f.buttons
   end

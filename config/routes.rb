@@ -13,5 +13,6 @@ Jul::Application.routes.draw do
     end
   end
 
-  match '/:id', to: 'shops#show'
+  # match '/:id', to: 'shops#show'
+  match '/:id', to: 'shop_groups#show'
 end

@@ -1,0 +1,17 @@
+<table id="products">
+	<tr>
+		<% @group.shops.each do |shop| %>
+			<td style="box-shadow: none;">
+				<%= link_to shop do %>
+					<%= image_tag(shop.logo.url) if shop.logo.exists? %>
+					<% if shop.shop_group_text %>
+						<%= shop.shop_group_text %>
+					<% else %>
+						<%= shop.title %>
+					<% end %>
+				<% end %>
+			</td>
+			<%== cycle('', '', '</tr><tr>') %>
+		<% end %>
+	</tr>
+</table>

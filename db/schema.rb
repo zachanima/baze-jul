@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111017045528) do
+ActiveRecord::Schema.define(:version => 20171025061558) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -109,6 +109,13 @@ ActiveRecord::Schema.define(:version => 20111017045528) do
 
   add_index "products", ["shop_id"], :name => "index_products_on_shop_id"
 
+  create_table "shop_groups", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "link"
+  end
+
   create_table "shops", :force => true do |t|
     t.string   "title"
     t.string   "link"
@@ -124,6 +131,8 @@ ActiveRecord::Schema.define(:version => 20111017045528) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.integer  "shop_group_id"
+    t.string   "shop_group_text"
   end
 
   create_table "tasks", :force => true do |t|

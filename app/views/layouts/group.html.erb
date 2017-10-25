@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @group.title %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+  <div id="content">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+  </div>
+
+  </body>
+</html>
